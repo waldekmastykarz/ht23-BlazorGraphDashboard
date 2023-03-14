@@ -1,0 +1,41 @@
+@page "/"
+@using MyDailyDashboard.Components
+<div class="app-container">
+  <div class="app-header">
+    <div class="app-header-left">
+       <i class="ms-Icon ms-Icon--ViewDashboard" style="font-size:32px; color: #0a58ca" aria-hidden="true"></i>
+      <p class="app-name">My Daily Dashboard </p>
+    </div>
+    <div class="app-header-right">
+      <LoginDisplay></LoginDisplay>
+    </div>
+  </div>
+  <div class="app-content">
+    <div class="contentView-section">
+    <div class="contentView-section-header">
+    @if (_user == null)
+    {
+        <p>
+            <em>Loading...</em>
+        </p>
+    }
+    else
+    {
+      <button class="profile-btn">
+       <img src="data:image/png;base64, @_currentUserPicture" />
+       <p style="padding-left:10px">Hello @_user.DisplayName 👋 </p>
+     </button>
+    }
+    </div>
+    <hr/>
+    <div class="project-boxes jsGridView">
+      <GraphContentBox Title="Unread E-Mails" Value="@_currentUnreadMessages.ToString()" icon="ms-Icon ms-Icon--Mail"/>
+      <GraphContentBox Title="Appointments Today" Value="@_currentMeetingsToday.ToString()" icon="ms-Icon ms-Icon--DateTime2"/>
+      <GraphContentBox Title="Online Meetings Today" Value="@_currentTeamsMeetingToday.ToString()" icon="ms-Icon ms-Icon--JoinOnlineMeeting"/>
+      <GraphContentBox Title="Tasks" Value="@_currentToDosLists.ToString()" icon="ms-Icon ms-Icon--ReceiptCheck"/>
+       <GraphContentBox Title="Chats" Value="@_currentChats.ToString()" icon="ms-Icon ms-Icon--OfficeChat"/>
+      <GraphContentBox Title="Remaining Space" Value="@_remainingDrive" icon="ms-Icon ms-Icon--Cloud"/>
+    </div>
+</div>
+  </div>
+</div>

@@ -1,0 +1,164 @@
+
+.app-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--app-container);
+    transition: 0.2s;
+    max-width: 1800px;
+}
+.app-container button, .app-container input, .app-container optgroup, .app-container select, .app-container textarea {
+    font-family: "DM Sans", sans-serif;
+}
+.app-content {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    padding: 16px 24px 24px 0;
+}
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 24px;
+    padding-top: 50px;
+    position: relative;
+}
+.app-header-left, .app-header-right {
+    display: flex;
+    align-items: center;
+}
+.app-header-left {
+    flex-grow: 1;
+}
+.app-header-right button {
+    margin-left: 10px;
+}
+
+.app-name {
+    color: var(--main-color);
+    margin: 0;
+    font-size: 25px;
+    line-height: 24px;
+    font-weight: 700;
+    margin: 0 15px;
+}
+
+.profile-btn {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+.profile-btn img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.page-content  {
+    flex: 1;
+    width: 100%;
+}
+
+
+.contentView-section {
+    flex: 2;
+    background-color: #fff;
+    border-radius: 32px;
+    padding: 32px 32px 32px 32px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.contentView-section-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 32px;
+}
+.contentView-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--main-color);
+}
+.contentView-section-header p {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    opacity: 0.9;
+    margin: 0;
+    color: var(--main-color);
+}
+.contentView-section-header .time {
+    font-size: 20px;
+}
+
+.project-boxes {
+    margin: 0 -8px;
+    overflow-y: scroll;
+    height: 650px;
+}
+.project-boxes.jsGridView {
+    display: flex;
+    flex-wrap: wrap;
+}
+.project-boxes.jsGridView .project-box-wrapper {
+    width: 33.3%;
+}
+.project-boxes.jsListView .project-box {
+    display: flex;
+    border-radius: 10px;
+    position: relative;
+}
+.project-boxes.jsListView .project-box > * {
+    margin-right: 24px;
+}
+.project-boxes.jsListView .more-wrapper {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+.project-boxes.jsListView .project-box-content-header {
+    order: 1;
+    max-width: 120px;
+}
+.project-boxes.jsListView .project-box-header {
+    order: 2;
+}
+.project-boxes.jsListView .project-box-footer {
+    order: 3;
+    padding-top: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.project-boxes.jsListView .project-box-footer:after {
+    display: none;
+}
+.project-boxes.jsListView .participants {
+    margin-bottom: 8px;
+}
+.project-boxes.jsListView .project-box-content-header p {
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.project-boxes.jsListView .project-box-header > span {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-size: 12px;
+}
+.project-boxes.jsListView .box-progress-wrapper {
+    order: 3;
+    flex: 1;
+}
+

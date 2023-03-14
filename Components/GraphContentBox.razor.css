@@ -1,0 +1,252 @@
+
+.projects-status {
+    display: flex;
+}
+
+.item-status {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 50px;
+}
+.item-status:not(:last-child) .status-type:after {
+    content: "";
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translatey(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 1px solid var(--secondary-color);
+}
+
+.status-number {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--main-color);
+}
+
+.status-type {
+    position: relative;
+    text-align: center;
+    color: var(--secondary-color);
+    padding-top: 5px;
+}
+
+
+.project-boxes {
+    margin: 0 -8px;
+    overflow-y: scroll;
+    height: 650px;
+}
+.project-boxes.jsGridView {
+    display: flex;
+    flex-wrap: wrap;
+}
+.project-boxes.jsGridView .project-box-wrapper {
+    width: 33.3%;
+}
+.project-boxes.jsListView .project-box {
+    display: flex;
+    border-radius: 10px;
+    position: relative;
+}
+.project-boxes.jsListView .project-box > * {
+    margin-right: 24px;
+}
+.project-boxes.jsListView .more-wrapper {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+.project-boxes.jsListView .project-box-content-header {
+    order: 1;
+    max-width: 120px;
+}
+.project-boxes.jsListView .project-box-header {
+    order: 2;
+}
+.project-boxes.jsListView .project-box-footer {
+    order: 3;
+    padding-top: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.project-boxes.jsListView .project-box-footer:after {
+    display: none;
+}
+.project-boxes.jsListView .participants {
+    margin-bottom: 8px;
+}
+.project-boxes.jsListView .project-box-content-header p {
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.project-boxes.jsListView .project-box-header > span {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-size: 12px;
+}
+.project-boxes.jsListView .box-progress-wrapper {
+    order: 3;
+    flex: 1;
+}
+
+.project-box {
+    --main-color-card: white;
+    border-radius: 30px;
+    padding: 16px;
+    background-color: var(--main-color-card);
+    height: 300px;
+    box-shadow: 0px 0px 13px rgb(0 0 0 / 0.2);
+    margin:5px;
+}
+.project-box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    color: var(--main-color);
+}
+.project-box-header span {
+    color: #4A4A4A;
+    opacity: 0.7;
+    font-size: 14px;
+    line-height: 16px;
+}
+.project-box-content-header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+.project-box-content-header p {
+    margin: 0;
+}
+.project-box-wrapper {
+    padding: 8px;
+    transition: 0.2s;
+}
+
+@media screen and (max-width: 880px) {
+    .messages-section {
+        transform: translateX(100%);
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        z-index: 2;
+        height: 100%;
+        width: 100%;
+    }
+    .messages-section .messages-close {
+        display: block;
+    }
+    .messages-btn {
+        display: flex;
+    }
+}
+@media screen and (max-width: 720px) {
+    .app-name, .profile-btn span {
+        display: none;
+    }
+    .add-btn, .notification-btn, .mode-switch {
+        width: 20px;
+        height: 20px;
+    }
+    .add-btn svg, .notification-btn svg, .mode-switch svg {
+        width: 16px;
+        height: 16px;
+    }
+    .app-header-right button {
+        margin-left: 4px;
+    }
+}
+@media screen and (max-width: 520px) {
+    .projects-section {
+        overflow: auto;
+    }
+    .project-boxes {
+        overflow-y: visible;
+    }
+    .app-sidebar, .app-icon {
+        display: none;
+    }
+    .app-content {
+        padding: 16px 12px 24px 12px;
+    }
+    .status-number, .status-type {
+        font-size: 10px;
+    }
+    .view-btn {
+        width: 24px;
+        height: 24px;
+    }
+    .app-header {
+        padding: 16px 10px;
+    }
+    .search-input {
+        max-width: 120px;
+    }
+    .project-boxes.jsGridView .project-box-wrapper {
+        width: 100%;
+    }
+    .projects-section {
+        padding: 24px 16px 0 16px;
+    }
+    .profile-btn img {
+        width: 24px;
+        height: 24px;
+    }
+    .app-header {
+        padding: 10px;
+    }
+    .projects-section-header p,
+    .projects-section-header .time {
+        font-size: 18px;
+    }
+    .status-type {
+        padding-right: 4px;
+    }
+    .status-type:after {
+        display: none;
+    }
+    .search-input {
+        font-size: 14px;
+    }
+    .messages-btn {
+        top: 48px;
+    }
+    .box-content-header {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .box-content-subheader {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .project-boxes.jsListView .project-box-header > span {
+        font-size: 10px;
+    }
+    .box-progress-header {
+        font-size: 12px;
+    }
+    .box-progress-percentage {
+        font-size: 10px;
+    }
+    .days-left {
+        font-size: 8px;
+        padding: 6px 6px;
+        text-align: center;
+    }
+    .project-boxes.jsListView .project-box > * {
+        margin-right: 10px;
+    }
+    .project-boxes.jsListView .more-wrapper {
+        right: 2px;
+        top: 10px;
+    }
+}
